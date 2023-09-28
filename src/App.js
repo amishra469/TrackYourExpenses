@@ -9,7 +9,6 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="app">
-          {/* <Sidebar isSidebar={isSidebar} /> */}
         </div>
       </ThemeProvider>
     </ColorModeContext.Provider>
