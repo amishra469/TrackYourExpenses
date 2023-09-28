@@ -1,10 +1,18 @@
 import React from 'react'
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { ColorModeContext, useMode } from "./context/Theme";
 
 const App = () => {
+  const [theme, colorMode] = useMode();
   return (
-    <div>
-      Track Your Expenses
-    </div>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <div className="app">
+          {/* <Sidebar isSidebar={isSidebar} /> */}
+        </div>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
   )
 }
 
