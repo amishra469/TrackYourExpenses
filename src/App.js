@@ -1,19 +1,19 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./context/Theme";
 import TopNavBar from './components/TopNavBar/TopNavBar';
+import Expenses from './containers/Expense/Expenses';
 
 const App = () => {
   const [theme, colorMode] = useMode();
-  const [isSidebar, setIsSidebar] = useState(true);
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="app">
-          {/* <Sidebar isSidebar={isSidebar} /> */}
           <main className="content">
-            <TopNavBar setIsSidebar={setIsSidebar} />
+            <TopNavBar />
+            <Expenses />
           </main>
         </div>
       </ThemeProvider>
